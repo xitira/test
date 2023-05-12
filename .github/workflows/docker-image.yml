@@ -19,4 +19,4 @@ jobs:
     - name: login to registry
       run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
     - name: Push docker images
-      run: docker push ghcr.io/${{ github.actor }}/xitira-test:latest
+      run: docker push ghcr.io/${{ github.actor }}/xitira-test:$(date +%s)

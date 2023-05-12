@@ -1,2 +1,2 @@
 FROM alpine
-CMD ["echo", "Hello from the databaseme!"]
+CMD ["echo", "Hello from the databaseme!"] 

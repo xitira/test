@@ -15,4 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag xitira-test:$(date +%s)
+    - name: login to registry
+      run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Push docker images
+      run: docker push ghcr.io/NAMESPACE/IMAGE_NAME:latest
